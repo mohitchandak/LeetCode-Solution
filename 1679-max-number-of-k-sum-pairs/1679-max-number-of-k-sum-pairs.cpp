@@ -1,3 +1,5 @@
+// 1. Sorting + plus two pointer. In O (nlogn)
+// 2. Using Map.. O(n)
 class Solution {
 public:
     int maxOperations(vector<int>& nums, int k) {
