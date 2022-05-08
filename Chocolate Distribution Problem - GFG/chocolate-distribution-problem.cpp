@@ -24,8 +24,8 @@ class Solution{
 			if(mind>diff)
 			{
 				mind = diff;
-				start = i;
-				end = i+m-1;
+				// start = i;
+				// end = i+m-1;
 			}
 		}
 		return mind;
