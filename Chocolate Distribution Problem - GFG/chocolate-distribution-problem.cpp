@@ -28,7 +28,7 @@ class Solution{
 				end = i+m-1;
 			}
 		}
-		return a[end]-a[start];
+		return mind;
             
     }
 };
