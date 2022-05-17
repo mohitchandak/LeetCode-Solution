@@ -11,28 +11,17 @@
 class Solution {
 public:
     
-     TreeNode*inorder(TreeNode* original, TreeNode* cloned,TreeNode*target,TreeNode*&res)
+    TreeNode* ans;
+    TreeNode* getTargetCopy(TreeNode* original, TreeNode* cloned, TreeNode* target) 
     {
-        
-        if(original!=NULL)
-        {
-            inorder(original->left,cloned->left,target,res);
-            
-                if(original==target)
-                {
-                    res=cloned;
-                }
-            
-            inorder(original->right,cloned->right,target,res);
-                
-        }
-        return res;
+
+        if (cloned == NULL)
+            return cloned;
+        if (cloned->val == target->val) // If target node found in cloned tree save it into a variable.
+            ans = cloned;
+        getTargetCopy(original, cloned->left, target);
+        getTargetCopy(original, cloned->right, target);
+        return ans;
     }
-   
-    TreeNode* getTargetCopy(TreeNode* original, TreeNode* cloned, TreeNode* target) {
-       TreeNode*res;
-        return inorder(original,cloned,target,res);
-    }
-    
    
 };
