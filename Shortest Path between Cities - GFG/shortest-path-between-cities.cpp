@@ -10,6 +10,9 @@ using namespace std;
 class Solution{   
 public:
     int shortestPath( int x, int y){ 
+        if(x==y){
+            return 0;
+        }
        int count ;
        while(x!=y){
            if(x>y){
