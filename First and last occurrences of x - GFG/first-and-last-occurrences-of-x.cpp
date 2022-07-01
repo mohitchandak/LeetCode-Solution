@@ -6,26 +6,21 @@ using namespace std;
 
 vector<int> find(int arr[], int n , int x )
 {
-    int first = -1;
-    int last = -1;
-    vector<int> ans;
+    int a1=-1;
+    int a2=-1;
     for(int i=0;i<n;i++){
-        if(arr[i] == x){
-            first = i;
-            int j = i+1;
-            while(arr[j] == x){
-                last = j;
-                j++;
-            }
-            if(last == -1){
-                last = first;
-            }
+        if(arr[i]==x){
+            a1=i;
             break;
         }
     }
-    ans.push_back(first);
-    ans.push_back(last);
-    return ans;
+    for(int i=n-1;i>=0;i--){
+        if(arr[i]==x){
+            a2=i;
+            break;
+        }
+    }
+    return {a1,a2};
 }
 
 // { Driver Code Starts.
